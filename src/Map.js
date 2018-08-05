@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import Marker from './Marker'
 import InfoWindow from './InfoWindow'
 
 export default class Map extends Component {
 
+/*  state = {
+
+    info: {}
+
+  }
+*/
+
+
   render() {
 
-    const Marker = ({ marker }) => <div className="marker" onClick={() => (<InfoWindow info={ marker } />)}>{marker.name}</div>;
+    const { info } = this.props
 
     return (
 
@@ -18,12 +27,14 @@ export default class Map extends Component {
           role="application"
           aria-labelledby="map-aria-description"
           tabIndex="-1">
-
           <label id="map-aria-description" className="info-label">Google map application</label>
 
           {this.props.data.map((marker) => (
-            <Marker key={ marker.id } lat={ marker.lat } lng={ marker.lng } marker={ marker }/>
+            <Marker key={ marker.id } lat={ marker.lat } lng={ marker.lng } marker={ marker } info={ info } onShowInfoWindow={this.props.onShowInfoWindow} />
           ))}
+
+          {info.name ? <InfoWindow key={ info.id } lat={ info.lat } lng={ info.lng } info={ info } onShowInfoWindow={this.props.onShowInfoWindow} /> : ''}
+
 
         </GoogleMapReact>
       </div>

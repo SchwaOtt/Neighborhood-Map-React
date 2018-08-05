@@ -83,7 +83,7 @@
 .marker {
 
   color: #fff;
-  background: #333;
+  /*background: #333;*/
   padding: 15px 10px;
   display: inline-flex;
   text-align: center;
@@ -94,6 +94,24 @@
 
 }
 
+.marker-unselected {
+
+  background-color: #333;
+
+}
+
+.marker-selected {
+
+  background-color: #e6b62d;
+
+}
+
+.marker:hover {
+
+  cursor: pointer;
+
+}
+
 .app-footer {
 
   margin: 0;
@@ -101,6 +119,49 @@
   color: #fff;
   background: #e6b62d;
   width: 100%;
+
+}
+
+.info-container {
+
+  width: 150px;
+  height: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #fff;
+  transform: translate(-50%, -115%);
+  position: relative;
+  left: 0;
+  bottom: 0;
+
+}
+
+.info-container:hover {
+
+  cursor: pointer;
+
+}
+
+.info-container p {
+
+  margin: 5px 0;
+
+}
+
+.close {
+
+  width: 16px;
+  height: 16px;
+  background-color: #f00;
+  color: #fff;
+  position: relative;
+  left: 135px;
+}
+
+.close:hover {
+
+  cursor: default;
 
 }
 

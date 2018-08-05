@@ -6,8 +6,17 @@ import * as Data from './markers'
 class App extends Component {
 
   state = {
+
     center: {lat: 47.598000, lng: 19.055000},
-    zoom: 16
+    zoom: 16,
+    info: {}
+
+  }
+
+  showInfoWindow = (marker) => {
+
+    this.setState({ info: marker })
+
   }
 
   render() {
@@ -20,21 +29,23 @@ class App extends Component {
         </header>
 
         <div className="container">
-          <div  className="sidebar">
-            <input className="sidebar-input">
+          <aside>
+            <div  className="sidebar">
+              <input className="sidebar-input">
 
-            </input>
+              </input>
 
-            <ul className="sidebar-list">
+              <ul className="sidebar-list">
 
-              {Data.map((marker) => (
-                <li role="link" key={ marker.id } tabIndex="0">{ marker.name }</li>
-              ))}
+                {Data.map((marker) => (
+                  <li role="link" key={ marker.id } tabIndex="0" info={ this.state.info } onClick={() => (this.showInfoWindow(marker))}>{ marker.name }</li>
+                ))}
 
-            </ul>
-          </div>
+              </ul>
+            </div>
+          </aside>
 
-          <Map center={ this.state.center } zoom={ this.state.zoom } data={Data} />
+          <Map center={ this.state.center } zoom={ this.state.zoom } data={Data} info={ this.state.info } onShowInfoWindow={ this.showInfoWindow }/>
 
         </div>
 
