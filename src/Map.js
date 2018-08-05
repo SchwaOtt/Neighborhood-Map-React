@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import GoogleMap from 'google-map-react';
+import GoogleMapReact from 'google-map-react';
 
 export default class Map extends Component {
 
   render() {
     return (
       <div className="map-container">
-        <GoogleMap
-          bootstrapURLKeys={{key: 'AIzaSyCn8tVADq4NBqfTvAegW7KG7DoBOvfxc_o'}}
+        <GoogleMapReact
+          bootstrapURLKeys={{key: 'AIzaSyC70Kw0w1_0xCxM6KmvA1Sc6Q9tEb7E3RY'}}
           center={ this.props.center }
           zoom={ this.props.zoom }>
-        </GoogleMap>
+        </GoogleMapReact>
       </div>
     );
   }
