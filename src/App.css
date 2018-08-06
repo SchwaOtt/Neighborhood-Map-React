@@ -83,7 +83,6 @@
 .marker {
 
   color: #fff;
-  /*background: #333;*/
   padding: 15px 10px;
   display: inline-flex;
   text-align: center;
@@ -151,12 +150,13 @@
 
 .close {
 
-  width: 16px;
-  height: 16px;
+  padding: 0;
+  width: 20px;
+  height: 20px;
   background-color: #f00;
   color: #fff;
   position: relative;
-  left: 135px;
+  left: 65px;
 }
 
 .close:hover {

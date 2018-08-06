@@ -2,14 +2,23 @@ import React, { Component } from 'react';
 import Map from './Map';
 import './App.css';
 import * as Data from './markers'
+import AdditionalData from './AdditionalData'
 
 class App extends Component {
 
   state = {
 
+    places: [],
     center: {lat: 47.598000, lng: 19.055000},
-    zoom: 16,
-    info: {}
+    zoom: 15,
+    info: {},
+    query: ''
+
+  }
+
+  componentDidMount() {
+
+    this.setState({ places: Data })
 
   }
 
@@ -17,6 +26,21 @@ class App extends Component {
 
     this.setState({ info: marker })
 
+  }
+
+  updateQuery = (query) => {
+
+    this.setState({ query: query.trim() })
+
+    if (query) {
+
+      this.setState({ places: Data.filter(place => (place.name.toUpperCase().includes(query.toUpperCase()) || place.type.toUpperCase().includes(query.toUpperCase()))) })
+
+    } else {
+
+      this.setState({ places: Data })
+
+    }
   }
 
   render() {
@@ -31,13 +55,11 @@ class App extends Component {
         <div className="container">
           <aside>
             <div  className="sidebar">
-              <input className="sidebar-input">
 
-              </input>
-
+              <input className="sidebar-input" type="text" placeholder="Search by Name or Category" value={ this.state.query } onChange={(event) => (this.updateQuery(event.target.value))} />
               <ul className="sidebar-list">
 
-                {Data.map((marker) => (
+                {this.state.places.map((marker) => (
                   <li role="link" key={ marker.id } tabIndex="0" info={ this.state.info } onClick={() => (this.showInfoWindow(marker))}>{ marker.name }</li>
                 ))}
 
@@ -45,13 +67,13 @@ class App extends Component {
             </div>
           </aside>
 
-          <Map center={ this.state.center } zoom={ this.state.zoom } data={Data} info={ this.state.info } onShowInfoWindow={ this.showInfoWindow }/>
+          <Map center={ this.state.center } zoom={ this.state.zoom } data={this.state.places} info={ this.state.info } onShowInfoWindow={ this.showInfoWindow }/>
 
         </div>
 
         <footer className="app-footer">
           <div>
-            Created by Me
+            Fotos present by FourSquare.com
           </div>
         </footer>
 

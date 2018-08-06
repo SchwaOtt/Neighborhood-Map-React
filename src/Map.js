@@ -5,14 +5,6 @@ import InfoWindow from './InfoWindow'
 
 export default class Map extends Component {
 
-/*  state = {
-
-    info: {}
-
-  }
-*/
-
-
   render() {
 
     const { info } = this.props
