@@ -33,5 +33,12 @@
     "type": "Culture",
     "lat": 47.600704,
     "lng": 19.059563
+  },
+  {
+    "id": 5,
+    "name": "Budapest Zoo",
+    "type": "Culture",
+    "lat": 47.517927,
+    "lng": 19.077525
   }
 ]

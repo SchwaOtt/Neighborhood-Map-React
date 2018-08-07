@@ -5,7 +5,7 @@
 .App-header {
   background-color: #e6b62d;
   padding: 2vh;
-  color: white;
+  color: #000;
 }
 
 .App-title {
@@ -115,7 +115,7 @@
 
   margin: 0;
   padding: 1vh 0;
-  color: #fff;
+  color: #000;
   background: #e6b62d;
   width: 100%;
 
@@ -142,7 +142,9 @@
 
 }
 
-.info-container p {
+.info-container
+h4,
+p {
 
   margin: 5px 0;
 
@@ -163,6 +165,11 @@
 
   cursor: default;
 
+}
+
+.info-img {
+
+  width: 120px;
 }
 
 @media screen and (max-width: 920px) {

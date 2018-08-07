@@ -4,14 +4,14 @@ export default class Marker extends Component {
 
   render() {
 
-    const { marker } = this.props
+    const { marker, info } = this.props
 
     return (
 
-      <div className={`marker marker-${this.props.info.name ? marker.id === this.props.info.id ? "selected" : "unselected" : "unselected"}`}
+      <div className={`marker marker-${info.name ? marker.id === info.id ? "selected" : "unselected" : "unselected"}`}
         onClick={() => (this.props.onShowInfoWindow(marker))}>
 
-        { marker.name }
+          { marker.name }
 
       </div>
     );

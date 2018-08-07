@@ -7,10 +7,12 @@ export default class InfoWindow extends Component {
     return (
 
       <div className="info-container">
-        <button className="close" onClick={() => (this.props.onShowInfoWindow(''))}>x</button>
+        <button aria-label="Exit" className="close" onClick={() => (this.props.onShowInfoWindow(''))}>x</button>
 
-        <p> { this.props.info.name } </p>
+        <h4> { this.props.info.name } </h4>
         <p> Category: { this.props.info.type } </p>
+
+        <img className="info-img" alt={ this.props.info.name } src={ this.props.info.imgUrl }/>
 
       </div>
     );
