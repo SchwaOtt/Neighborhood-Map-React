@@ -2,7 +2,9 @@ export const additionalData = (place) => {
 
   const fourSquare = 'https://api.foursquare.com/v2/venues/'
   const client = 'client_id=N3KHGI3ICJ0UGT2ZLP3RRRCOYKJX0W5XMX5TSWXMUW2XPWHG&client_secret=LWOBREXOURC1SV1WZKBHQMBSACY1MV5FQFYY0A4ADGIUMYPH&v=20180807'
-  const url = `${fourSquare}search?ll=${place.lat},${place.lng}&${client}&limit=1`;
+
+//place.name for more accurate result.
+  const url = `${fourSquare}search?ll=${place.lat},${place.lng}&${client}&query=${place.name}&limit=1`;
 
   return fetch(url)
 

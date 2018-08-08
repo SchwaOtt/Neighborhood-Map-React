@@ -40,5 +40,26 @@
     "type": "Culture",
     "lat": 47.517927,
     "lng": 19.077525
+  },
+  {
+    "id": 6,
+    "name": "Capital Circus of Budapest",
+    "type": "Culture",
+    "lat": 47.519495,
+    "lng": 19.080979
+  },
+  {
+    "id": 7,
+    "name": "Heroes' Square",
+    "type": "Culture",
+    "lat": 47.514510,
+    "lng": 19.078358
+  },
+  {
+    "id": 8,
+    "name": "Aquincum",
+    "type": "Culture",
+    "lat": 47.562754,
+    "lng": 19.048568
   }
 ]

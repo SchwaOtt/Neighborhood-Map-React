@@ -39,7 +39,6 @@
   margin: 0;
   height: 89.3vh;
   width: 15vw;
-  z-index: 1;
   top: 0;
   left: 0;
   background-color: #000;
@@ -102,6 +101,10 @@
 .marker-selected {
 
   background-color: #e6b62d;
+
+/*Bring to foreground*/  
+  z-index: 1;
+  position: relative;
 
 }
 

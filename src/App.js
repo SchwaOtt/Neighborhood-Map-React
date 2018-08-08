@@ -10,7 +10,7 @@ class App extends Component {
   state = {
 
     places: [],
-    center: {lat: 47.598000, lng: 19.055000},
+    center: {lat: 47.560000, lng: 19.055000},
     zoom: 12,
     info: {},
     query: ''
@@ -19,6 +19,7 @@ class App extends Component {
 
   componentDidMount() {
 
+//Data from FourSquare.
     Data.forEach(place => additionalData(place)
 
       .then(response => {response ? place.imgUrl = response.PhotoUrl : place.imgUrl = noPic}))
@@ -27,9 +28,20 @@ class App extends Component {
 
   }
 
+//Handling of InfoWindow.
   showInfoWindow = (marker) => {
 
-    this.setState({ info: marker })
+    let latlng = {}
+
+//Pos and zoom.
+    latlng.lat = marker.lat+0.000350
+    latlng.lng = marker.lng
+
+    this.setState({
+
+      info: marker,
+      center: latlng,
+      zoom: 16 })
 
   }
 
@@ -39,13 +51,22 @@ class App extends Component {
 
     if (query) {
 
+//Filtering.
       this.setState({ places: Data.filter(place => (place.name.toUpperCase().includes(query.toUpperCase()) || place.type.toUpperCase().includes(query.toUpperCase()))) })
 
+//Close Info.
       this.showInfoWindow('')
 
     } else {
 
-      this.setState({ places: Data })
+//Reset...
+      this.setState({
+
+        places: Data,
+        center: {lat: 47.560000, lng: 19.055000},
+        zoom: 12
+
+      })
 
     }
   }
