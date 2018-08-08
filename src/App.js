@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Map from './Map';
 import './App.css';
 import * as Data from './markers'
-import { additionalData } from './AdditionalData'
+import { getAdditionalData } from './AdditionalData'
 import noPic from './img/nopic.jpg'
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
   componentDidMount() {
 
 //Data from FourSquare.
-    Data.forEach(place => additionalData(place)
+    Data.forEach(place => getAdditionalData(place)
 
       .then(response => {response ? place.imgUrl = response.PhotoUrl : place.imgUrl = noPic}))
 

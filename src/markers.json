@@ -4,62 +4,71 @@
     "name": "Pais Dezső Elementary School",
     "type": "Education",
     "lat": 47.601240,
-    "lng": 19.049703
+    "lng": 19.049703,
+    "query": "Pais Dezső Ált Isk"
   },
   {
     "id": 1,
     "name": "Rózsalugas Restaurant",
     "type": "Meal",
     "lat": 47.600530,
-    "lng": 19.046421
+    "lng": 19.046421,
+    "query": "Rózsalugas Étterem"
   },
   {
     "id": 2,
     "name": "Marketplace of Békásmegyer",
     "type": "Meal",
     "lat": 47.597527,
-    "lng": 19.056892
+    "lng": 19.056892,
+    "query": "Békásmegyeri piac"
   },
   {
     "id": 3,
     "name": "Beach of Pünkösdfürdő",
     "type": "Entertainment",
     "lat": 47.595006,
-    "lng": 19.067275
+    "lng": 19.067275,
+    "query": "Pünkösdfürdői Strand"
   },
   {
     "id": 4,
     "name": "Ervin Szabó Library of Budapest",
     "type": "Culture",
     "lat": 47.600704,
-    "lng": 19.059563
+    "lng": 19.059563,
+    "query": "Fővárosi Szabó Ervin Könyvtár"
   },
   {
     "id": 5,
     "name": "Budapest Zoo",
     "type": "Culture",
     "lat": 47.517927,
-    "lng": 19.077525
+    "lng": 19.077525,
+    "query": "Budapest Zoo"
   },
   {
     "id": 6,
     "name": "Capital Circus of Budapest",
     "type": "Culture",
     "lat": 47.519495,
-    "lng": 19.080979
+    "lng": 19.080979,
+    "query": "Fővárosi Nagycirkusz"
   },
   {
     "id": 7,
     "name": "Heroes' Square",
     "type": "Culture",
     "lat": 47.514510,
-    "lng": 19.078358
+    "lng": 19.078358,
+    "query": "Hősök Tere"
   },
   {
     "id": 8,
-    "name": "Aquincum",
+    "name": "Aquincum ",
     "type": "Culture",
-    "lat": 47.562754,
-    "lng": 19.048568
+    "lat": 47.563051,
+    "lng": 19.048607,
+    "query": "Aquincumi múzeum"
   }
 ]
