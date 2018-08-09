@@ -45,7 +45,7 @@ class App extends Component {
     let latlng = {}
 
 //Pos and zoom.
-    latlng.lat = marker.lat+0.000600
+    latlng.lat = marker.lat+0.000800
     latlng.lng = marker.lng
 
     this.setState({
