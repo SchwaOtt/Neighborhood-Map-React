@@ -89,6 +89,7 @@
   justify-content: center;
   border-radius: 5%;
   transform: translate(-50%, -50%);
+  min-width: 60px;
 
 }
 
@@ -102,7 +103,7 @@
 
   background-color: #e6b62d;
 
-/*Bring to foreground*/  
+/*Bring to foreground*/
   z-index: 1;
   position: relative;
 
@@ -124,10 +125,16 @@
 
 }
 
+.app-footer a {
+
+  text-decoration: none;
+
+}
+
 .info-container {
 
   width: 150px;
-  height: 200px;
+  height: 215px;
   padding: 5px;
   border-radius: 5px;
   text-align: center;
@@ -150,6 +157,18 @@ h4,
 p {
 
   margin: 5px 0;
+
+}
+
+.info-api {
+
+  margin: 3px 0;
+
+}
+
+.info-api a {
+
+  text-decoration: none;
 
 }
 

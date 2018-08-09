@@ -1,19 +1,31 @@
 export const getAdditionalData = (place) => {
 
   const fourSquare = 'https://api.foursquare.com/v2/venues/'
-  const client = 'client_id=N3KHGI3ICJ0UGT2ZLP3RRRCOYKJX0W5XMX5TSWXMUW2XPWHG&client_secret=LWOBREXOURC1SV1WZKBHQMBSACY1MV5FQFYY0A4ADGIUMYPH&v=20180807'
+  const client = 'client_id=FNGCYJA2OJHSB3VMYSGCGD0URU4NUVY2FDAIAGSDQKF3DR0S&client_secret=ZCYCMIWWBWKUOUPT0OPEXS1L5MIJPZKZ0VWSEPYEDWIDKAHR&v=20180807'
 
 //place.query for more accurate result.
   const url = `${fourSquare}search?ll=${place.lat},${place.lng}&${client}&query=${place.query}&limit=1`;
 
   return fetch(url)
 
-    .then(response => response.json())
+  .catch(error => {
 
-    .then(data => {
+    console.log(`First error log: ${error}`)
+
+  })
+
+  .then(response => response.json())
+
+  .then(data => {
 
 //Get first hit.
     return fetch(`${fourSquare}${data.response.venues[0].id}?${client}`);
+
+  })
+
+  .catch(error => {
+
+    console.log(`Second error log: ${error}`)
 
   })
 
@@ -28,7 +40,7 @@ export const getAdditionalData = (place) => {
 
   .catch(error => {
 
-    console.log(error)
+    console.log(`Third error log: ${error}`)
 
   });
 }

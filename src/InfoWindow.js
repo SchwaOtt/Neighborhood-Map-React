@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import noPic from './img/nopic.jpg'
 
 export default class InfoWindow extends Component {
 
@@ -13,6 +14,7 @@ export default class InfoWindow extends Component {
         <p> Category: { this.props.info.type } </p>
 
         <img className="info-img" alt={ this.props.info.name } src={ this.props.info.imgUrl }/>
+        {this.props.info.imgUrl === noPic ? <div className="info-api">Picture not avaiable!</div> : <div className="info-api">Photo by <a target="_blank" rel="noopener noreferrer" href="https://foursquare.com"> FourSquare.com</a></div>}
 
       </div>
     );

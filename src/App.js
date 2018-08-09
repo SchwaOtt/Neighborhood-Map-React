@@ -13,7 +13,8 @@ class App extends Component {
     center: {lat: 47.560000, lng: 19.055000},
     zoom: 12,
     info: {},
-    query: ''
+    query: '',
+    mapError: false
 
   }
 
@@ -26,6 +27,16 @@ class App extends Component {
 
     this.setState({ places: Data })
 
+//Check map.
+    setTimeout(() => {
+
+      if (!document.querySelector('IFRAME')) {
+
+        this.setState({ mapError: true })
+
+      }
+    }, 1000)
+
   }
 
 //Handling of InfoWindow.
@@ -34,7 +45,7 @@ class App extends Component {
     let latlng = {}
 
 //Pos and zoom.
-    latlng.lat = marker.lat+0.000350
+    latlng.lat = marker.lat+0.000600
     latlng.lng = marker.lng
 
     this.setState({
@@ -112,7 +123,8 @@ class App extends Component {
             </div>
           </aside>
 
-          <Map
+          {this.state.mapError ? <div>"You ar in offline. Map is not loaded. Please, check your internet connection."</div> :
+            <Map
             role="application"
             aria-labelledby="map-aria-description"
             center={ this.state.center }
@@ -120,12 +132,13 @@ class App extends Component {
             data={this.state.places}
             info={ this.state.info }
             onShowInfoWindow={ this.showInfoWindow }
-          />
+          />}
 
         </div>
 
         <footer className="app-footer" tabIndex="0">
-          Fotos present by FourSquare.com
+          Fotos present by
+          <a target="_blank" rel="noopener noreferrer" href="https://foursquare.com"> FourSquare.com</a>
         </footer>
 
       </div>
